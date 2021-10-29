@@ -10,7 +10,7 @@ public class Player_Model {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "player_model_generator")
     @SequenceGenerator(name = "player_model_generator",sequenceName = "player_model_seq", allocationSize = 1)
     private long id;
-    private String modelName;
+    private String modelname;
 
 
     public Player_Model() {
@@ -26,11 +26,11 @@ public class Player_Model {
         this.id = id;
     }
 
-    public String getModelName() {
-        return modelName;
+    public String getModelname() {
+        return modelname;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setModelname(String modelname) {
+        this.modelname = modelname;
     }
 }

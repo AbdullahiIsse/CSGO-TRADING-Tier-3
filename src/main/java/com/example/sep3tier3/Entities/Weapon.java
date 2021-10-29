@@ -10,7 +10,7 @@ public class Weapon {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "weapon_generator")
     @SequenceGenerator(name = "weapon_generator",sequenceName = "weapon_seq", allocationSize = 1)
     private long id;
-    private String weaponName;
+    private String weaponname;
 
     public Weapon() {
 
@@ -25,11 +25,11 @@ public class Weapon {
         this.id = id;
     }
 
-    public String getWeaponName() {
-        return weaponName;
+    public String getWeaponname() {
+        return weaponname;
     }
 
-    public void setWeaponName(String weaponName) {
-        this.weaponName = weaponName;
+    public void setWeaponname(String weaponname) {
+        this.weaponname = weaponname;
     }
 }

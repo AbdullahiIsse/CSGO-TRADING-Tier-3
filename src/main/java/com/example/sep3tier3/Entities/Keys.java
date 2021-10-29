@@ -10,7 +10,7 @@ public class Keys {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "key_generator")
     @SequenceGenerator(name = "key_generator",sequenceName = "key_seq", allocationSize = 1)
     private long id;
-    private String keyName;
+    private String keyname;
 
 
     public Keys() {
@@ -27,18 +27,11 @@ public class Keys {
         this.id = id;
     }
 
-    public String getKeyName() {
-        return keyName;
+    public String getKeyname() {
+        return keyname;
     }
 
-    public void setKeyName(String keyName) {
-        this.keyName = keyName;
+    public void setKeyname(String keyname) {
+        this.keyname = keyname;
     }
-
-
-
-
-
-
-
 }

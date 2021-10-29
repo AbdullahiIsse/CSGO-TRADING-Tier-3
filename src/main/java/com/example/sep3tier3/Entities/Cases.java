@@ -10,7 +10,7 @@ public class Cases {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "case_generator")
     @SequenceGenerator(name = "case_generator",sequenceName = "case_seq", allocationSize = 1)
     private long id;
-    private String caseName;
+    private String casename;
 
 
     public Cases() {
@@ -26,11 +26,11 @@ public class Cases {
         this.id = id;
     }
 
-    public String getCaseName() {
-        return caseName;
+    public String getCasename() {
+        return casename;
     }
 
-    public void setCaseName(String caseName) {
-        this.caseName = caseName;
+    public void setCasename(String casename) {
+        this.casename = casename;
     }
 }
