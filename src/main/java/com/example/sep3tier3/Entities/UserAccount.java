@@ -1,6 +1,10 @@
 package com.example.sep3tier3.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "user_accounts")
@@ -15,6 +19,15 @@ public class UserAccount {
     private String username;
 
     private String password;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "userAccount")
+    private List<Payment> payments = new ArrayList<>();
+
+
+    @OneToOne(mappedBy = "userAccount")
+    public Wallet wallet;
+
 
     public UserAccount() {
 
@@ -42,5 +55,13 @@ public class UserAccount {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Payment> getPayments() {
+        return payments;
+    }
+
+    public void setPayments(List<Payment> payments) {
+        this.payments = payments;
     }
 }

@@ -1,5 +1,8 @@
 package com.example.sep3tier3.Entities;
 
+import com.example.sep3tier3.Dao.UserAccountRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.persistence.*;
 
 @Entity
@@ -21,7 +24,6 @@ public class Items {
 
 
     public Items() {
-
 
     }
 

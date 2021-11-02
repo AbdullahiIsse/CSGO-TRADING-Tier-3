@@ -16,7 +16,13 @@ public class Payment {
     private String cardName;
     @Column(name = "carddate")
     private String cardDate;
-    private long user_id;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private UserAccount userAccount;
+
+
+
 
 
     public Payment() {
@@ -57,11 +63,11 @@ public class Payment {
         this.cardDate = cardDate;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 }

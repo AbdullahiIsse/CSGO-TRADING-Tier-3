@@ -11,9 +11,12 @@ public class Wallet {
     @SequenceGenerator(name = "wallet_generator",sequenceName = "wallet_seq", allocationSize = 1)
     private long id;
     private int amount;
-    private long user_id;
-    private long payment_id;
 
+
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private UserAccount userAccount;
 
     public Wallet() {
 
@@ -36,19 +39,11 @@ public class Wallet {
         this.amount = amount;
     }
 
-    public long getUser_id() {
-        return user_id;
+    public UserAccount getUserAccount() {
+        return userAccount;
     }
 
-    public void setUser_id(long user_id) {
-        this.user_id = user_id;
-    }
-
-    public long getPayment_id() {
-        return payment_id;
-    }
-
-    public void setPayment_id(long payment_id) {
-        this.payment_id = payment_id;
+    public void setUserAccount(UserAccount userAccount) {
+        this.userAccount = userAccount;
     }
 }
