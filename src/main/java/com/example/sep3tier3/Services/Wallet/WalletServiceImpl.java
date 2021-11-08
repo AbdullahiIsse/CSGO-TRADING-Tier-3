@@ -1,4 +1,4 @@
-package com.example.sep3tier3.Services;
+package com.example.sep3tier3.Services.Wallet;
 
 import com.example.sep3tier3.Dao.WalletRepository;
 import com.example.sep3tier3.Entities.Wallet;
@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class WalletService implements IWalletService{
+public class WalletServiceImpl implements WalletService {
 
     @Autowired
     WalletRepository walletRepository;

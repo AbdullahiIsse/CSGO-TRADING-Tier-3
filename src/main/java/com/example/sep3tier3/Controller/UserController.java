@@ -1,7 +1,7 @@
 package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.User;
-import com.example.sep3tier3.Services.IUserService;
+import com.example.sep3tier3.Services.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    IUserService userService;
+    UserService userService;
 
 
     @GetMapping

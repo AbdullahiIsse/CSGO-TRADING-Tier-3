@@ -1,7 +1,7 @@
 package com.example.sep3tier3.Controller;
 
-import com.example.sep3tier3.Entities.Wallet;
-import com.example.sep3tier3.Services.Wallet.WalletService;
+import com.example.sep3tier3.Entities.Payment;
+import com.example.sep3tier3.Services.Payment.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,24 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/wallet")
-public class WalletController {
+@RequestMapping("/payment")
+public class PaymentController {
 
     @Autowired
-    WalletService walletService;
-
-
+    PaymentService paymentService;
 
     @GetMapping
     @ResponseStatus(HttpStatus.FOUND)
-    public List<Wallet> getAllWallets(){
+    public List<Payment>getAllPayments(){
 
-        return walletService.findAll();
+        return paymentService.findAll();
     }
-
-
-
-
 
 
 
