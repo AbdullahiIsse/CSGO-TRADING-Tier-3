@@ -6,44 +6,41 @@ import javax.persistence.*;
 @Table(name = "wallet")
 public class Wallet {
     @Id
-    @Column(name = "wallet_Id")
+    @Column(name ="wallet_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wallet_generator")
     @SequenceGenerator(name = "wallet_generator",sequenceName = "wallet_seq", allocationSize = 1)
-    private long id;
-    private int amount;
+    private Long id;
+    private int price;
+    private long user_id;
 
-
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private UserAccount userAccount;
 
     public Wallet() {
 
 
     }
 
-    public long getId() {
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getAmount() {
-        return amount;
+    public int getPrice() {
+        return price;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void setPrice(int price) {
+        this.price = price;
     }
 
-    public UserAccount getUserAccount() {
-        return userAccount;
+    public long getUser_id() {
+        return user_id;
     }
 
-    public void setUserAccount(UserAccount userAccount) {
-        this.userAccount = userAccount;
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
     }
 }

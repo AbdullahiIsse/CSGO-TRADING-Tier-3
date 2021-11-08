@@ -1,7 +1,7 @@
 package com.example.sep3tier3.Controller;
 
-import com.example.sep3tier3.Entities.UserAccount;
-import com.example.sep3tier3.Services.UserAccountService;
+import com.example.sep3tier3.Entities.User;
+import com.example.sep3tier3.Services.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,26 +13,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
-public class UserAccountController {
+public class UserController {
 
     @Autowired
-    UserAccountService userAccountService;
+    IUserService userService;
 
 
+    @GetMapping
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<User>getAllUsers(){
 
-    @GetMapping()
-    @ResponseStatus(HttpStatus.ACCEPTED)
-    public List<UserAccount>getAllUsers(){
-
-        return userAccountService.findAll();
-
+        return userService.findAll();
     }
-
-
-
-
-
-
 
 
 
