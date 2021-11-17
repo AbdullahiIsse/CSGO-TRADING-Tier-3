@@ -21,8 +21,8 @@ public class ReceiptController {
 
 
     @GetMapping
-    @ResponseStatus(HttpStatus.FOUND)
-    public List<Receipt>getAllReceipts(){
+    @ResponseStatus(HttpStatus.CONFLICT)
+    public  List<Receipt>getAllReceipts(){
 
         return receiptService.findAll();
     }

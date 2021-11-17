@@ -9,5 +9,12 @@ public interface UserService {
 
     List<User> findAll();
 
+    User validateUser(String username,String password) throws Exception;
+
+    User addUser(User user);
+
+
+    void DeleteByUserId(Long id);
+
 
 }
