@@ -4,10 +4,7 @@ import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Services.Items.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,8 +19,12 @@ public class ItemsController {
     @ResponseStatus(HttpStatus.FOUND)
 
     public List<Items>getAllItems(){
-
         return itemsService.findAll();
     }
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Items getItemById(@PathVariable("id") long id){
+        return itemsService.findItemByID(id);
+    }
 }
