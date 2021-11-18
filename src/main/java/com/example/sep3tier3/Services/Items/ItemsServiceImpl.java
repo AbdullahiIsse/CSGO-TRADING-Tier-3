@@ -16,7 +16,11 @@ public class ItemsServiceImpl implements ItemsService {
 
     @Override
     public List<Items> findAll() {
-
         return itemsRepository.findAll();
+    }
+
+    @Override
+    public Items findItemByID(long id) {
+        return itemsRepository.findById(id).get();
     }
 }

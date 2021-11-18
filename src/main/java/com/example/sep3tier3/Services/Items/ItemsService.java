@@ -8,7 +8,7 @@ public interface ItemsService {
 
     List<Items> findAll();
 
-
+    Items findItemByID(long id);
 
 
 
