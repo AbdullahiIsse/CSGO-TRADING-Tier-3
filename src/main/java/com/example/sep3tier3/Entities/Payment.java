@@ -11,20 +11,13 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "payment_generator")
     @SequenceGenerator(name = "payment_generator",sequenceName = "payment_seq", allocationSize = 1)
     private Long id;
-    private int price;
-    private String cardname;
-    private String carddate;
-    private int receipt_id;
-
+    private String name;
+    private String cardNumber;
+    private String expirationDate;
+    private String securityCode;
 
     public Payment() {
-
-
-
-
-
     }
-
 
     public Long getId() {
         return id;
@@ -34,35 +27,46 @@ public class Payment {
         this.id = id;
     }
 
-    public int getPrice() {
-        return price;
+    public String getName() {
+        return name;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCardname() {
-        return cardname;
+    public String getCardNumber() {
+        return cardNumber;
     }
 
-    public void setCardname(String cardname) {
-        this.cardname = cardname;
+    public void setCardNumber(String cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
-    public String getCarddate() {
-        return carddate;
+    public String getExpirationDate() {
+        return expirationDate;
     }
 
-    public void setCarddate(String carddate) {
-        this.carddate = carddate;
+    public void setExpirationDate(String expirationDate) {
+        this.expirationDate = expirationDate;
     }
 
-    public int getReceipt_id() {
-        return receipt_id;
+    public String getSecurityCode() {
+        return securityCode;
     }
 
-    public void setReceipt_id(int receipt_id) {
-        this.receipt_id = receipt_id;
+    public void setSecurityCode(String securityCode) {
+        this.securityCode = securityCode;
+    }
+
+    @Override
+    public String toString() {
+        return "Payment{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cardNumber='" + cardNumber + '\'' +
+                ", expirationDate='" + expirationDate + '\'' +
+                ", securityCode='" + securityCode + '\'' +
+                '}';
     }
 }

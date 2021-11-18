@@ -12,18 +12,16 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     PaymentRepository paymentRepository;
 
-
-
     public List<Payment> findAll(){
 
         return paymentRepository.findAll();
     }
 
+    @Override
+    public Payment addPayment(Payment payment) {
 
-
-
-
-
+        return paymentRepository.save(payment);
+    }
 
 
 
