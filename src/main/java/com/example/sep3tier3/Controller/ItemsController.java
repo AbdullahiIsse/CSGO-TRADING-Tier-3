@@ -15,21 +15,15 @@ import java.util.List;
 @RequestMapping("/items")
 public class ItemsController {
 
-
     @Autowired
     ItemsService itemsService;
 
-
-
     @GetMapping
     @ResponseStatus(HttpStatus.FOUND)
+
     public List<Items>getAllItems(){
 
         return itemsService.findAll();
     }
-
-
-
-
 
 }

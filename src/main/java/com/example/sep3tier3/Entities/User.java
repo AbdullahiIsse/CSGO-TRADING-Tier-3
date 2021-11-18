@@ -1,7 +1,7 @@
 package com.example.sep3tier3.Entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+
 
 @Entity
 @Table(name = "user_accounts")
@@ -12,13 +12,12 @@ public class User {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
     @SequenceGenerator(name = "user_generator",sequenceName = "user_accounts_seq", allocationSize = 1)
     private long id;
-    @NotNull
+
     private String username;
-    @NotNull
+
     private String password;
 
     public User() {
-
 
     }
 

@@ -24,5 +24,7 @@ public interface UserRepository extends CrudRepository<User,Long> {
 
 
 
+    User deleteUserById(User id);
+
 
 }
