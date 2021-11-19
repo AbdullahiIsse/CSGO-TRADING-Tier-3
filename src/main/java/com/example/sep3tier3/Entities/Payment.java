@@ -12,9 +12,9 @@ public class Payment {
     @SequenceGenerator(name = "payment_generator",sequenceName = "payment_seq", allocationSize = 1)
     private Long id;
     private String name;
-    private String cardNumber;
-    private String expirationDate;
-    private String securityCode;
+    private String cardnumber;
+    private String expirationdate;
+    private String securitycode;
 
     public Payment() {
     }
@@ -35,28 +35,28 @@ public class Payment {
         this.name = name;
     }
 
-    public String getCardNumber() {
-        return cardNumber;
+    public String getCardnumber() {
+        return cardnumber;
     }
 
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCardnumber(String cardnumber) {
+        this.cardnumber = cardnumber;
     }
 
-    public String getExpirationDate() {
-        return expirationDate;
+    public String getExpirationdate() {
+        return expirationdate;
     }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
+    public void setExpirationdate(String expirationdate) {
+        this.expirationdate = expirationdate;
     }
 
-    public String getSecurityCode() {
-        return securityCode;
+    public String getSecuritycode() {
+        return securitycode;
     }
 
-    public void setSecurityCode(String securityCode) {
-        this.securityCode = securityCode;
+    public void setSecuritycode(String securitycode) {
+        this.securitycode = securitycode;
     }
 
     @Override
@@ -64,9 +64,9 @@ public class Payment {
         return "Payment{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", cardNumber='" + cardNumber + '\'' +
-                ", expirationDate='" + expirationDate + '\'' +
-                ", securityCode='" + securityCode + '\'' +
+                ", cardNumber='" + cardnumber + '\'' +
+                ", expirationDate='" + expirationdate + '\'' +
+                ", securityCode='" + securitycode + '\'' +
                 '}';
     }
 }
