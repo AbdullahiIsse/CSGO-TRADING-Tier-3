@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Services.User;
 
 import com.example.sep3tier3.Dao.UserRepository;
+import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.User;
 import net.bytebuddy.implementation.bytecode.Throw;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,15 +26,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User validateUser(String username, String password) throws Exception {
-
-        User users = userRepository.findByUsernameAndPassword(username, password);
-        if (users == null){
-            throw new Exception("user not found");
-        }
-
-        return users;
-
+    public User findUserByID(long id) {
+        return userRepository.findById(id).get();
     }
 
     @Override
@@ -46,6 +40,18 @@ public class UserServiceImpl implements UserService {
     public void DeleteByUserId(Long id) {
 
         userRepository.deleteById(id);
+    }
+
+    @Override
+    public User validateUser(String username, String password) throws Exception {
+
+        User users = userRepository.findByUsernameAndPassword(username, password);
+        if (users == null){
+            throw new Exception("user not found");
+        }
+
+        return users;
+
     }
 
 
