@@ -9,6 +9,8 @@ public interface UserService {
 
     List<User> findAll();
 
+    User findUserByID(long id);
+
     User validateUser(String username,String password) throws Exception;
 
     User addUser(User user);

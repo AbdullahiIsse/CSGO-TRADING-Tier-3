@@ -1,5 +1,6 @@
 package com.example.sep3tier3.Controller;
 
+import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Services.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class UserController {
     }
 
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public User getUserById(@PathVariable("id") long id){
+        return userService.findUserByID(id); }
 
 
 
