@@ -1,13 +1,11 @@
 package com.example.sep3tier3.Controller;
 
+import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.SaleOffer;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,6 +23,12 @@ public class SaleOfferController {
 
         return saleOfferService.findAll();
 
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public SaleOffer findOfferById(@PathVariable("id") long id){
+        return saleOfferService.findOfferById(id);
     }
 
 

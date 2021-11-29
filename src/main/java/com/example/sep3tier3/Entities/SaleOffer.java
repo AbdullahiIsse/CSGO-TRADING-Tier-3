@@ -11,7 +11,7 @@ public class SaleOffer {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sale_offer_generator")
     @SequenceGenerator(name = "sale_offer_generator",sequenceName = "sale_offer_seq", allocationSize = 1)
     private Long id;
-    private String sale_offer_name;
+    private int item_id;
     private int wallet_id;
 
 
@@ -28,12 +28,12 @@ public class SaleOffer {
         this.id = id;
     }
 
-    public String getSale_offer_name() {
-        return sale_offer_name;
+    public int getItem_id() {
+        return item_id;
     }
 
-    public void setSale_offer_name(String sale_offer_name) {
-        this.sale_offer_name = sale_offer_name;
+    public void setItem_id(int item_id) {
+        this.item_id = item_id;
     }
 
     public int getWallet_id() {
