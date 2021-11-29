@@ -31,7 +31,6 @@ public class UserServiceImpl implements UserService {
         if (users == null){
             throw new Exception("user not found");
         }
-        System.out.println(users.toString());
 
         return users;
 
@@ -42,8 +41,6 @@ public class UserServiceImpl implements UserService {
 
         return userRepository.save(user);
     }
-
-
 
     @Override
     public void DeleteByUserId(Long id) {
