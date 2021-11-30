@@ -14,10 +14,20 @@ import javax.persistence.*;
 
         private long id;
 
-        private String ChatList;
+        private String Chatlist;
+
+        private long user_id;
 
         public Chat() {
 
+        }
+
+        public long getUser_id() {
+            return user_id;
+        }
+
+        public void setUser_id(long user_id) {
+            this.user_id = user_id;
         }
 
         public long getId() {
@@ -28,20 +38,13 @@ import javax.persistence.*;
             this.id = id;
         }
 
-        public String getChatList() {
-            return ChatList;
+        public String getChatlist() {
+            return Chatlist;
         }
 
-        public void setChatList(String chatList) {
-            ChatList = chatList;
+        public void setChatlist(String chatlist) {
+            Chatlist = chatlist;
         }
 
 
-        @Override
-        public String toString() {
-            return "Chat{" +
-                    "id=" + id +
-                    ", ChatList='" + ChatList + '\'' +
-                    '}';
-        }
     }
