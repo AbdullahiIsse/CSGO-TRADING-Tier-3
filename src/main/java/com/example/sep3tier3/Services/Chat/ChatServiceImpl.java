@@ -26,5 +26,9 @@ public class ChatServiceImpl implements ChatService{
         return chatRepository.findById(id).get();
     }
 
+    @Override
+    public Chat addchat(Chat chat) {
 
+        return chatRepository.save(chat);
+    }
 }
