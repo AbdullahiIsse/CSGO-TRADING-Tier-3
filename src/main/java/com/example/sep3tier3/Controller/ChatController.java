@@ -24,10 +24,11 @@ public class ChatController {
         return chatService.findAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{user_id}")
     @ResponseStatus(HttpStatus.OK)
-    public Chat getChatById(@PathVariable("id") long id){
-        return chatService.findChatByID(id); }
+    public List<Chat> getChatById(@PathVariable("user_id") long user_id){
+        return chatService.findAllById(user_id); }
+
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)

@@ -10,8 +10,10 @@ public interface ChatService {
 
     List<Chat> findAll();
 
-    Chat findChatByID(long id);
+    Chat findChatByID(long user_id);
 
     Chat addchat(Chat chat);
+
+    List<Chat> findAllById(long user_id);
 
 }

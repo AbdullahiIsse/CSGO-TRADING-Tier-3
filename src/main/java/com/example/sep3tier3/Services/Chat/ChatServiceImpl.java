@@ -22,8 +22,8 @@ public class ChatServiceImpl implements ChatService{
     }
 
     @Override
-    public Chat findChatByID(long id) {
-        return chatRepository.findById(id).get();
+    public Chat findChatByID(long user_id) {
+        return chatRepository.findById(user_id).get();
     }
 
     @Override
@@ -31,4 +31,11 @@ public class ChatServiceImpl implements ChatService{
 
         return chatRepository.save(chat);
     }
+
+    @Override
+    public List<Chat> findAllById(long user_id) {
+        return chatRepository.findAllById(user_id);
+    }
+
+
 }
