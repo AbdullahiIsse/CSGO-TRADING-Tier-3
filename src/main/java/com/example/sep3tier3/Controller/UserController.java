@@ -21,7 +21,7 @@ public class UserController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.FOUND)
-    public List<User>getAllUsers(){
+    public List<User> getAllUsers() {
 
         return userService.findAll();
     }
@@ -35,43 +35,33 @@ public class UserController {
 
 
     @GetMapping("/validate")
-    public ResponseEntity<User> validateUser(@RequestParam String username,@RequestParam String password)  {
+    public ResponseEntity<User> validateUser(@RequestParam String username, @RequestParam String password) {
 
         User user = null;
         try {
-            user = userService.validateUser(username,password);
+            user = userService.validateUser(username, password);
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }
-        return  new ResponseEntity<User>(user,HttpStatus.FOUND);
+        return new ResponseEntity<User>(user, HttpStatus.FOUND);
 
-        }
+    }
 
-        @PostMapping(consumes = "application/json")
-        @ResponseStatus(HttpStatus.CREATED)
-        public User addUser(@RequestBody User user){
-             return userService.addUser(user);
-        }
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public User addUser(@RequestBody User user) {
+        return userService.addUser(user);
+    }
 
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void delete(@PathVariable("id") Long id){
+    public void delete(@PathVariable("id") Long id) {
 
         userService.DeleteByUserId(id);
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }
