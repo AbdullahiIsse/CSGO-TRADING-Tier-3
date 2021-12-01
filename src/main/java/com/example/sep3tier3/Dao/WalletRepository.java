@@ -9,7 +9,4 @@ public interface WalletRepository extends CrudRepository<Wallet,Long> {
 
     @Override
     List<Wallet> findAll();
-
-
-
 }
