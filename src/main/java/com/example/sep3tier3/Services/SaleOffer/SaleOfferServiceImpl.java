@@ -27,4 +27,9 @@ public class SaleOfferServiceImpl implements SaleOfferService {
         return saleOfferRepository.findById(id).get();
     }
 
+    @Override
+    public SaleOffer addSaleOffer(SaleOffer saleOffer) {
+        return saleOfferRepository.save(saleOffer);
+    }
+
 }

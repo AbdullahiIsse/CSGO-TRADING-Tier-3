@@ -1,5 +1,6 @@
 package com.example.sep3tier3.Controller;
 
+import com.example.sep3tier3.Entities.Chat;
 import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.SaleOffer;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
@@ -32,12 +33,9 @@ public class SaleOfferController {
     }
 
 
-
-
-
-
-
-
-
-
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public SaleOffer addSaleOffer(@RequestBody SaleOffer saleOffer) {
+        return saleOfferService.addSaleOffer(saleOffer);
+    }
 }
