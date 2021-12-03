@@ -1,7 +1,6 @@
 package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.Payment;
-import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Services.Payment.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -29,6 +28,20 @@ public class PaymentController {
     public Payment addPayment(@RequestBody Payment payment){
         return paymentService.addPayment(payment);
     }
+
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Payment getPaymentByUserId(@PathVariable("id") long id){
+
+        return paymentService.findPaymentByUserId(id);
+    }
+
+
+
+
+
+
 
 
 }

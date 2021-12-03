@@ -26,9 +26,20 @@ public class WalletServiceImpl implements WalletService {
         return walletRepository.findById(id).get();
     }
 
+    @Override
+    public long sumOfPrice(long paymentId) {
+        return walletRepository.sumOfPrice(paymentId);
+    }
 
 
+    public Wallet addWallet(Wallet wallet){
+        return walletRepository.save(wallet);
+    }
 
+    @Override
+    public Wallet findWalletsById(long id) {
+        return walletRepository.findWalletsById(id);
+    }
 
 
 
