@@ -1,4 +1,4 @@
-package com.example.sep3tier3.Handler;
+package com.example.sep3tier3.DaoJOIN;
 
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;

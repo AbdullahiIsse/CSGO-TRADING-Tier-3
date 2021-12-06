@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Controller;
 
-import com.example.sep3tier3.Entities.Items;
+import com.example.sep3tier3.Entities.Payment;
+import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Entities.Wallet;
 import com.example.sep3tier3.Services.Wallet.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,22 +17,56 @@ public class WalletController {
     @Autowired
     WalletService walletService;
 
+
     @GetMapping
     @ResponseStatus(HttpStatus.FOUND)
-    public List<Wallet> getAllWallets(){
+    public List<Wallet> getAllWallets() {
 
         return walletService.findAll();
     }
 
+
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public Wallet findWalletById(@PathVariable("id") long id){
-        return walletService.findWalletByID(id);
+    public Wallet getWalletById(@PathVariable("id") long id) {
+
+        return walletService.findWalletsById(id);
+    }
+
+
+    @GetMapping("/price/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public long sumOfPrice(@PathVariable("id") long id) {
+
+        return walletService.sumOfPrice(id);
+
+
+    }
+
+
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Wallet addWallet(@RequestBody Wallet wallet) {
+        return walletService.addWallet(wallet);
     }
 
 
 
+    @PatchMapping("/{id}")
+    public Wallet UpdatePriceByPaymentId(@RequestBody Wallet wallet,@PathVariable("id") long id){
 
+       Wallet wallets = walletService.findWalletsById(id);
+
+
+       if (wallet.getPrice() != 0){
+
+           wallets.setPrice(wallet.getPrice());
+       }
+
+       return walletService.addWallet(wallets);
+
+
+    }
 
 
 

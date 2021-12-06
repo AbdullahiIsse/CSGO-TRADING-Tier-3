@@ -9,4 +9,7 @@ public interface PaymentService {
     List<Payment> findAll();
 
     Payment addPayment(Payment payment);
+
+
+    Payment findPaymentByUserId(long id);
 }

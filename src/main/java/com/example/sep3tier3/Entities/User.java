@@ -17,10 +17,11 @@ public class User {
 
     private String password;
 
+    private long securitylevel;
+
     public User() {
 
     }
-
 
     public long getId() {
         return id;
@@ -46,12 +47,21 @@ public class User {
         this.password = password;
     }
 
+    public long getSecuritylevel() {
+        return securitylevel;
+    }
+
+    public void setSecuritylevel(long securitylevel) {
+        this.securitylevel = securitylevel;
+    }
+
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
+                ", securitylevel=" + securitylevel +
                 '}';
     }
 }

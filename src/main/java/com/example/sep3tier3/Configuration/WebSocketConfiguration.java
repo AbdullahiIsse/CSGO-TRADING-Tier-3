@@ -1,6 +1,6 @@
 package com.example.sep3tier3.Configuration;
 
-import com.example.sep3tier3.Handler.ChatWebSocketHandler;
+import com.example.sep3tier3.DaoJOIN.ChatWebSocketHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.socket.WebSocketHandler;

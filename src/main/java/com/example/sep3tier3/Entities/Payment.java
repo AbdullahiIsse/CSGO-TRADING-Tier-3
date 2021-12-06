@@ -15,8 +15,17 @@ public class Payment {
     private String cardnumber;
     private String expirationdate;
     private String securitycode;
+    private long user_id;
 
     public Payment() {
+    }
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public Long getId() {

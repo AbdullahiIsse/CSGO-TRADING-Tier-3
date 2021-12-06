@@ -23,6 +23,11 @@ public class PaymentServiceImpl implements PaymentService {
         return paymentRepository.save(payment);
     }
 
+    @Override
+    public Payment findPaymentByUserId(long id) {
+
+        return paymentRepository.findPaymentByUser_id(id);
+    }
 
 
 }

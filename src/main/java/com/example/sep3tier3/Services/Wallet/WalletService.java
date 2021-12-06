@@ -11,6 +11,14 @@ public interface WalletService {
 
     Wallet findWalletByID(long id);
 
+    Wallet findWalletsById(long id);
+
+    long sumOfPrice(long paymentId);
+
+    Wallet addWallet(Wallet wallet);
+
+
+
 
 
 }
