@@ -14,6 +14,16 @@ public class SaleOffer {
     private int item_id;
     private int sale_price;
     private int wallet_id;
+    private int user_id;
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
 
 
     public SaleOffer() {
