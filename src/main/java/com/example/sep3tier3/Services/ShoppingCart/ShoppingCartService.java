@@ -7,7 +7,6 @@ import java.util.List;
 public interface ShoppingCartService {
 
 
-
     List<ShoppingCart> findAll();
 
     long countCartById(long id);
@@ -17,6 +16,13 @@ public interface ShoppingCartService {
     ShoppingCart addShoppingCart(ShoppingCart shoppingCart);
 
      long countTotalPriceById(long id);
+
+
+
+
+
+
+
 
 
 

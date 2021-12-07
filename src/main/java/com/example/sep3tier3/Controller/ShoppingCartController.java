@@ -46,7 +46,7 @@ public class ShoppingCartController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ShoppingCart addUser(@RequestBody ShoppingCart shoppingCart) {
+    public ShoppingCart addShoppingCart(@RequestBody ShoppingCart shoppingCart) {
         return shoppingCartService.addShoppingCart(shoppingCart);
     }
 

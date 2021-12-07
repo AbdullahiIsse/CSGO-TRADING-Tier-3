@@ -1,7 +1,8 @@
 package com.example.sep3tier3.Controller;
 
-import com.example.sep3tier3.Entities.Items;
+
 import com.example.sep3tier3.Entities.User;
+import com.example.sep3tier3.Handler.SaveInfo;
 import com.example.sep3tier3.Services.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -50,7 +51,10 @@ public class UserController {
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public User addUser(@RequestBody User user) {
-        return userService.addUser(user);
+
+        User user1 = userService.addUser(user);
+        SaveInfo.getInstance().setUser(user1);
+        return user1;
     }
 
 

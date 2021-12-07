@@ -1,7 +1,5 @@
 package com.example.sep3tier3.Controller;
 
-import com.example.sep3tier3.Entities.Payment;
-import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Entities.Wallet;
 import com.example.sep3tier3.Services.Wallet.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,9 +56,9 @@ public class WalletController {
        Wallet wallets = walletService.findWalletsById(id);
 
 
-       if (wallet.getPrice() != 0){
+       if (wallet.getBalance() != 0){
 
-           wallets.setPrice(wallet.getPrice());
+           wallets.setBalance(wallet.getBalance());
        }
 
        return walletService.addWallet(wallets);

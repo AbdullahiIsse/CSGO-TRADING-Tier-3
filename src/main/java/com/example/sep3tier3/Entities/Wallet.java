@@ -10,15 +10,33 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wallet_generator")
     @SequenceGenerator(name = "wallet_generator",sequenceName = "wallet_seq", allocationSize = 1)
     private Long id;
-    private int price;
-    private long payment_id;
+    private int balance;
+    private long creditcard_id;
+    private long user_id;
+
 
 
     public Wallet() {
 
 
+
+
     }
 
+
+    public Wallet(int balance, long creditcard_id, long user_id) {
+        this.balance = balance;
+        this.creditcard_id = creditcard_id;
+        this.user_id = user_id;
+    }
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
 
     public Long getId() {
         return id;
@@ -28,19 +46,19 @@ public class Wallet {
         this.id = id;
     }
 
-    public int getPrice() {
-        return price;
+    public int getBalance() {
+        return balance;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
-    public long getPayment_id() {
-        return payment_id;
+    public long getCreditcard_id() {
+        return creditcard_id;
     }
 
-    public void setPayment_id(long payment_id) {
-        this.payment_id = payment_id;
+    public void setCreditcard_id(long creditcard_id) {
+        this.creditcard_id = creditcard_id;
     }
 }

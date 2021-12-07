@@ -11,11 +11,12 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_generator")
     @SequenceGenerator(name = "order_generator",sequenceName = "order_seq", allocationSize = 1)
     private Long id;
-    private String order_name;
-    private int wallet_id;
+    private long wallet_buyer_id;
+    private long sale_id;
 
 
     public Order() {
+
 
 
     }
@@ -29,19 +30,19 @@ public class Order {
         this.id = id;
     }
 
-    public String getOrder_name() {
-        return order_name;
+    public long getWallet_buyer_id() {
+        return wallet_buyer_id;
     }
 
-    public void setOrder_name(String order_name) {
-        this.order_name = order_name;
+    public void setWallet_buyer_id(long wallet_buyer_id) {
+        this.wallet_buyer_id = wallet_buyer_id;
     }
 
-    public int getWallet_id() {
-        return wallet_id;
+    public long getSale_id() {
+        return sale_id;
     }
 
-    public void setWallet_id(int wallet_id) {
-        this.wallet_id = wallet_id;
+    public void setSale_id(long sale_id) {
+        this.sale_id = sale_id;
     }
 }

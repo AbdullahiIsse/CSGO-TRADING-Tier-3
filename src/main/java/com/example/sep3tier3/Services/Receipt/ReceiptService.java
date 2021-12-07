@@ -9,4 +9,6 @@ public interface ReceiptService {
     List<Receipt> findAll();
 
 
+
+
 }

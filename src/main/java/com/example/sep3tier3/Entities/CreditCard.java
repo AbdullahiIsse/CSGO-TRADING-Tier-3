@@ -3,30 +3,24 @@ package com.example.sep3tier3.Entities;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "payment")
-public class Payment {
+@Table(name = "creditcard")
+public class CreditCard {
 
     @Id
-    @Column(name ="payment_id")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "payment_generator")
-    @SequenceGenerator(name = "payment_generator",sequenceName = "payment_seq", allocationSize = 1)
+    @Column(name ="creditcard_id")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "creditCard_generator")
+    @SequenceGenerator(name = "creditCard_generator",sequenceName = "credit_card_seq", allocationSize = 1)
     private Long id;
     private String name;
     private String cardnumber;
     private String expirationdate;
     private String securitycode;
-    private long user_id;
 
-    public Payment() {
+
+    public CreditCard() {
     }
 
-    public long getUser_id() {
-        return user_id;
-    }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 
     public Long getId() {
         return id;
@@ -70,7 +64,7 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" +
+        return "CreditCard{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", cardNumber='" + cardnumber + '\'' +

@@ -27,4 +27,10 @@ public class ItemsController {
     public Items getItemById(@PathVariable("id") long id){
         return itemsService.findItemByID(id);
     }
+
+
+
+
+
+
 }

@@ -15,5 +15,6 @@ public interface ChatRepository extends CrudRepository<Chat,Long> {
     List<Chat> findAll();
 
 
+
    
 }

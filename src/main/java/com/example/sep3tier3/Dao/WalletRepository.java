@@ -11,12 +11,11 @@ public interface WalletRepository extends CrudRepository<Wallet,Long> {
     @Override
     List<Wallet> findAll();
 
-    @Query(nativeQuery = true,value = "select * from wallet where payment_id = ?1")
+    @Query(nativeQuery = true,value = "select * from wallet where user_id = ?1")
     Wallet findWalletsById(long id);
 
-    @Query(nativeQuery = true,value = "select sum(price) from wallet where payment_id = ?1")
+    @Query(nativeQuery = true,value = "select sum(balance) from wallet where user_id = ?1")
     long sumOfPrice(long paymentId);
-
 
 
 

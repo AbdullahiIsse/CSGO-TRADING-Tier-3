@@ -19,6 +19,8 @@ public class SaleOffer {
     public SaleOffer() {
 
 
+
+
     }
 
     public Long getId() {
