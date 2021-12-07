@@ -9,6 +9,7 @@ public interface OrderService {
 
     List<Order>findAll();
 
+    Order addOrder(Order o);
 
 
 }
