@@ -9,7 +9,7 @@ public class Order {
     @Id
     @Column(name ="order_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_generator")
-    @SequenceGenerator(name = "order_generator",sequenceName = "order_seq", allocationSize = 1)
+    @SequenceGenerator(name = "order_generator",sequenceName = "orders_seq", allocationSize = 1)
     private Long id;
     private long wallet_buyer_id;
     private long sale_id;

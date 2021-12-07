@@ -40,6 +40,14 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
         return shoppingCartRepository.save(shoppingCart);
     }
 
+    @Override
+    public void deleteShoppingCart(long user_id, long sale_offer_id) {
+
+        shoppingCartRepository.deleteShoppingCart(user_id,sale_offer_id);
+
+    }
+
+
     public long countTotalPriceById(long id){
 
         return shop.countTotalPriceById(id);

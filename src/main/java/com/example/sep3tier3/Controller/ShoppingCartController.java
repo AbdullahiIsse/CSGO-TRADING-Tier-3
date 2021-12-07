@@ -8,6 +8,7 @@ import com.example.sep3tier3.Services.ShoppingCart.ShoppingCartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -57,6 +58,20 @@ public class ShoppingCartController {
 
         return shoppingCartService.countTotalPriceById(id);
     }
+
+
+    @DeleteMapping("/{user_id}/{sale_offer_id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteShoppingCart(@PathVariable("user_id") long user_id, @PathVariable("sale_offer_id") long sale_offer_id ){
+        try {
+            shoppingCartService.deleteShoppingCart(user_id,sale_offer_id);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
+    }
+
+
 
 
 
