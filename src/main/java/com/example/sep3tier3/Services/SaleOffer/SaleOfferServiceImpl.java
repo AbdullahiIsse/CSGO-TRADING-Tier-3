@@ -23,8 +23,13 @@ public class SaleOfferServiceImpl implements SaleOfferService {
     }
 
     @Override
-    public SaleOffer findOfferById(long id) {
+    public List<SaleOffer> findOfferByUserId(long id) {
         return saleOfferRepository.findOfferByWallet_id(id);
+    }
+
+    @Override
+    public SaleOffer findOfferBySaleOfferId(long id) {
+        return saleOfferRepository.findById(id).get();
     }
 
     @Override

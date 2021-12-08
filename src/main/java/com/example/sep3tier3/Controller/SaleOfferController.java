@@ -1,7 +1,6 @@
 package com.example.sep3tier3.Controller;
 
 
-import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.SaleOffer;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +25,18 @@ public class SaleOfferController {
 
     }
 
+    @GetMapping("/user/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<SaleOffer> findOfferByUserId(@PathVariable("id") long id){
+        return saleOfferService.findOfferByUserId(id);
+    }
+
+
+
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public SaleOffer findOfferById(@PathVariable("id") long id){
-        return saleOfferService.findOfferById(id);
+    public SaleOffer findOfferBySaleOfferId(@PathVariable("id") long id){
+        return saleOfferService.findOfferBySaleOfferId(id);
     }
 
 

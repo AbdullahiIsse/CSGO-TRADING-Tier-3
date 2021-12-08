@@ -10,7 +10,9 @@ public interface SaleOfferService {
 
     List<SaleOffer> findAll();
 
-    SaleOffer findOfferById(long id);
+    List<SaleOffer> findOfferByUserId(long id);
+
+    SaleOffer findOfferBySaleOfferId(long id);
 
     SaleOffer addSaleOffer(SaleOffer saleOffer);
 
