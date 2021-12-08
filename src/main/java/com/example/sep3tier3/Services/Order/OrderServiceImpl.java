@@ -32,4 +32,9 @@ public class OrderServiceImpl implements OrderService {
     public Order addOrder(Order o) {
         return orderRepository.save(o);
     }
+
+    @Override
+    public Order findOrderBySaleId(long id) {
+        return orderRepository.findBySaleId(id);
+    }
 }

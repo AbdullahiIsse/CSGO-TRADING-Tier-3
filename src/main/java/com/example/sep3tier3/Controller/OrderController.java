@@ -29,6 +29,13 @@ public class OrderController {
         return orderService.findOrderByID(id);
     }
 
+    @GetMapping("/saleid/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Order getOrderBySaleId(@PathVariable("id") long id){
+        return orderService.findOrderBySaleId(id);
+    }
+
+
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public Order addOrder(@RequestBody Order o){
