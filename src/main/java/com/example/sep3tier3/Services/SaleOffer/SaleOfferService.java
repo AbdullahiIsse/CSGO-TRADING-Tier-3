@@ -15,5 +15,4 @@ public interface SaleOfferService {
     SaleOffer addSaleOffer(SaleOffer saleOffer);
 
 
-
 }
