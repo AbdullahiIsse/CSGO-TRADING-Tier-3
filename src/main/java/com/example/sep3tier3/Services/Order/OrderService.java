@@ -12,5 +12,5 @@ public interface OrderService {
     Order findOrderByID(long id);
     Order addOrder(Order o);
 
-
+    Order findOrderBySaleId(long id);
 }
