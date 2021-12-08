@@ -1,5 +1,5 @@
 package com.example.sep3tier3.Services.SaleOffer;
-import com.example.sep3tier3.Entities.Chat;
+
 import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.SaleOffer;
 
