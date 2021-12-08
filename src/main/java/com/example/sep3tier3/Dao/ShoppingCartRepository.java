@@ -18,6 +18,12 @@ public interface ShoppingCartRepository extends CrudRepository<ShoppingCart,Long
     long countShoppingCartByUserId(long id);
 
 
+    @Query(nativeQuery = true,value = "DELETE FROM shopping_cart WHERE user_id=?1 and sale_offer_id = ?2")
+    void deleteShoppingCart(long user_id,long sale_offer_id);
+
+
+
+
 
 
 

@@ -15,6 +15,8 @@ public interface ShoppingCartService {
 
     ShoppingCart addShoppingCart(ShoppingCart shoppingCart);
 
+    void deleteShoppingCart(long user_id,long sale_offer_id);
+
      long countTotalPriceById(long id);
 
 

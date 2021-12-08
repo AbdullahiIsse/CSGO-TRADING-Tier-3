@@ -63,7 +63,36 @@ public class CreditCardController {
 
             return paymentByName;
         }
+    }
 
+
+    @PatchMapping("/{id}")
+    public CreditCard UpdatePaymentByUserId(@RequestBody CreditCard creditCard,@PathVariable("id") long id){
+
+        CreditCard creditCard1 = creditCardService.findPaymentById(id);
+
+
+        if (creditCard.getName() != null){
+
+            creditCard1.setName(creditCard.getName());
+        }
+
+        if (creditCard.getCardnumber() != null){
+
+            creditCard1.setCardnumber(creditCard.getCardnumber());
+        }
+
+        if (creditCard.getExpirationdate() != null){
+
+            creditCard1.setExpirationdate(creditCard.getExpirationdate());
+        }
+
+        if (creditCard.getSecuritycode() != null){
+
+            creditCard1.setSecuritycode(creditCard.getSecuritycode());
+        }
+
+        return creditCardService.addPayment(creditCard1);
 
 
     }
