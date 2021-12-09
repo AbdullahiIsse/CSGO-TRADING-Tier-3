@@ -4,13 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "sale_offer")
-public class SaleOffer {
+public class  SaleOffer {
 
     @Id
     @Column(name ="sale_offer_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sale_offer_generator")
     @SequenceGenerator(name = "sale_offer_generator",sequenceName = "sale_offer_seq", allocationSize = 1)
-    private Long id;
+    private long id;
     private long item_id;
     private int sale_price;
     private long wallet_id;
@@ -24,11 +24,11 @@ public class SaleOffer {
 
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

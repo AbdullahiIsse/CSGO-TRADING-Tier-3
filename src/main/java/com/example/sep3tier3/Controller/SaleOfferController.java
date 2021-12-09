@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
@@ -44,5 +45,15 @@ public class SaleOfferController {
     @ResponseStatus(HttpStatus.CREATED)
     public SaleOffer addSaleOffer(@RequestBody SaleOffer saleOffer) {
         return saleOfferService.addSaleOffer(saleOffer);
+    }
+
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void delete(@PathVariable("id") Long id) {
+
+        saleOfferService.DeleteBySaleOfferId(id);
+
+
     }
 }

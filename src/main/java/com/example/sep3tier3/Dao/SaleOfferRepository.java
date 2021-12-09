@@ -13,11 +13,10 @@ public interface SaleOfferRepository extends CrudRepository<SaleOffer,Long> {
 
     @Override
     List<SaleOffer> findAll();
-
-
-
+    
 
     @Query(nativeQuery = true,value = "select * from sale_offer where wallet_id = ?1")
     List<SaleOffer> findOfferByWallet_id(long id);
+
 
 }
