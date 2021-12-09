@@ -24,6 +24,14 @@ public class SoldOfferController {
         return soldOfferService.findAll();
     }
 
+
+    @GetMapping("/order_id/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<SoldOffer> findSoldOfferByOrderId(@PathVariable("id") long id){
+        return soldOfferService.findSoldOfferByOrderId(id);
+    }
+
+
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public SoldOffer findSoldOfferById(@PathVariable("id") long id){
@@ -36,4 +44,7 @@ public class SoldOfferController {
     public SoldOffer addSoldOffer(@RequestBody SoldOffer soldOffer) {
         return soldOfferService.addSoldOffer(soldOffer);
     }
+
+
+
 }

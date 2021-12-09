@@ -10,10 +10,10 @@ public interface SoldOfferService {
 
     List<SoldOffer> findAll();
 
+    List<SoldOffer> findSoldOfferByOrderId(long id);
+
     SoldOffer findSoldOfferById(long id);
 
     SoldOffer addSoldOffer(SoldOffer saleOffer);
-
-
 
 }
