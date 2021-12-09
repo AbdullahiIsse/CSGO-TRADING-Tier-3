@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.Order;
+import com.example.sep3tier3.Entities.SoldOffer;
 import com.example.sep3tier3.Services.Order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -21,6 +22,12 @@ public class OrderController {
     public List<Order>getAllOrders(){
 
         return orderService.findAll();
+    }
+
+    @GetMapping("/wallet_buyer_id/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<Order> findOrderByWalletBuyerId(@PathVariable("id") long id){
+        return orderService.findOrderByWalletBuyerId(id);
     }
 
     @GetMapping("/{id}")

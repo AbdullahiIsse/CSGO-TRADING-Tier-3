@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Dao;
 
 import com.example.sep3tier3.Entities.Order;
+import com.example.sep3tier3.Entities.SoldOffer;
 import com.example.sep3tier3.Entities.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -15,7 +16,8 @@ public interface OrderRepository extends CrudRepository<Order,Long> {
     @Query(nativeQuery = true,value = "select * from orders where sale_id = ?1")
     Order findBySaleId(long id);
 
-
+    @Query(nativeQuery = true,value = "select * from orders where wallet_buyer_id = ?1")
+    List<Order> findOrderByWalletBuyerId(long id);
 
 
 }
