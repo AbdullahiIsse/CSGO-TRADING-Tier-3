@@ -32,10 +32,10 @@ public class SoldOfferController {
     }
 
 
-    @GetMapping("/{id}")
+    @GetMapping("/seller_wallet_id/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public SoldOffer findSoldOfferById(@PathVariable("id") long id){
-        return soldOfferService.findSoldOfferById(id);
+    public List<SoldOffer> findSoldOfferBySellerWalletId(@PathVariable("id") long id){
+        return soldOfferService.findSoldOfferBySellerWalletId(id);
     }
 
 

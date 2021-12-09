@@ -27,10 +27,9 @@ public class SoldOfferServiceImpl implements SoldOfferService {
         return soldOfferRepository.findSoldOfferByOrderId(id);
     }
 
-
     @Override
-    public SoldOffer findSoldOfferById(long id) {
-        return soldOfferRepository.findById(id).get();
+    public List<SoldOffer> findSoldOfferBySellerWalletId(long id) {
+        return soldOfferRepository.findSoldOfferBySellerWalletId(id);
     }
 
     @Override

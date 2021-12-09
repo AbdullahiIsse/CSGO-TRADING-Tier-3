@@ -17,5 +17,8 @@ public interface SoldOfferRepository extends CrudRepository<SoldOffer,Long> {
     @Query(nativeQuery = true,value = "select * from sold_offer where order_id = ?1")
     List<SoldOffer> findSoldOfferByOrderId(long id);
 
+    @Query(nativeQuery = true,value = "select * from sold_offer where seller_wallet_id = ?1")
+    List<SoldOffer> findSoldOfferBySellerWalletId(long id);
+
 
 }
