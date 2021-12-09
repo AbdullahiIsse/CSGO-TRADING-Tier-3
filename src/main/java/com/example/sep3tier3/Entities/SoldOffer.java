@@ -16,29 +16,6 @@ public class SoldOffer {
     private int sale_price;
     private long seller_wallet_id;
 
-    public void setItem_id(long item_id) {
-        this.item_id = item_id;
-    }
-
-    public void setWallet_id(long wallet_id) {
-        this.seller_wallet_id = wallet_id;
-    }
-
-    public long getOrder_id(){
-        return order_id;
-    }
-    public void setOrder_id(long id){
-        this.order_id = id;
-    }
-
-    public long getUser_id() {
-        //return user_id;
-        return 0;
-    }
-
-    public void setUser_id(long user_id) {
-        //this.user_id = user_id;
-    }
 
     public SoldOffer() {
 
@@ -50,29 +27,40 @@ public class SoldOffer {
     public Long getId() {
         return id;
     }
+
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public int getSale_price() {
-        return sale_price;
-    }
-    public void setSale_price(int id) {
-        this.sale_price = id;
     }
 
     public long getItem_id() {
         return item_id;
     }
-    public void setItem_id(int item_id) {
+
+    public void setItem_id(long item_id) {
         this.item_id = item_id;
     }
 
-    public long getWallet_id() {
-        return seller_wallet_id;
-    }
-    public void setWallet_id(int wallet_id) {
-        this.seller_wallet_id = wallet_id;
+    public long getOrder_id() {
+        return order_id;
     }
 
+    public void setOrder_id(long order_id) {
+        this.order_id = order_id;
+    }
+
+    public int getSale_price() {
+        return sale_price;
+    }
+
+    public void setSale_price(int sale_price) {
+        this.sale_price = sale_price;
+    }
+
+    public long getSeller_wallet_id() {
+        return seller_wallet_id;
+    }
+
+    public void setSeller_wallet_id(long seller_wallet_id) {
+        this.seller_wallet_id = seller_wallet_id;
+    }
 }
