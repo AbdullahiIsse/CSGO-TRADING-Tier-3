@@ -21,4 +21,6 @@ public interface SoldOfferRepository extends CrudRepository<SoldOffer,Long> {
     List<SoldOffer> findSoldOfferBySellerWalletId(long id);
 
 
+
+
 }
