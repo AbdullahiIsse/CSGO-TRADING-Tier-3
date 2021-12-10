@@ -1,10 +1,15 @@
 package com.example.sep3tier3.Entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class ShoppingCartJoin {
 
-
+    @Id
     private long sale_offer_id;
 
     private long item_id;

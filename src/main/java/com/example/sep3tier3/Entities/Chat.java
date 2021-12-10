@@ -6,34 +6,40 @@ import javax.persistence.*;
     @Entity
     @Table(name = "Chat")
     public class Chat {
-
         @Id
-        @Column(name ="user_id")
-        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "chat_generator")
-        @SequenceGenerator(name = "chat_generator",sequenceName = "chat_seq", allocationSize = 1)
+        @Column(name = "id", nullable = true)
+        private Long id;
 
-        private long user_id;
+        private String chat;
 
-        private String Chatlist;
+        private long star;
+
+        public Long getId() {
+            return id;
+        }
+
+        public void setId(Long id) {
+            this.id = id;
+        }
 
 
         public Chat() {
 
         }
 
-        public long getUser_id() {
-            return user_id;
+        public String getChat() {
+            return chat;
         }
 
-        public void setUser_id(long user_id) {
-            this.user_id = user_id;
+        public void setChat(String chat) {
+            this.chat = chat;
         }
 
-        public String getChatlist() {
-            return Chatlist;
+        public long getStar() {
+            return star;
         }
 
-        public void setChatlist(String chatlist) {
-            Chatlist = chatlist;
+        public void setStar(long star) {
+            this.star = star;
         }
     }

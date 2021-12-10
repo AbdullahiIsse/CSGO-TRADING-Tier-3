@@ -17,6 +17,11 @@ public interface ShoppingCartRepository extends CrudRepository<ShoppingCart,Long
 
     long countShoppingCartByUserId(long id);
 
+    @Query(nativeQuery = true,value = "select sum(sale_price) from shopping_cart join sale_offer so on so.sale_offer_id = shopping_cart.sale_offer_id where user_id = ?1")
+    long countTotalPriceById(long userId);
+
+
+
 
     @Query(nativeQuery = true,value = "DELETE FROM shopping_cart WHERE user_id=?1 and sale_offer_id = ?2")
     void deleteShoppingCart(long user_id,long sale_offer_id);

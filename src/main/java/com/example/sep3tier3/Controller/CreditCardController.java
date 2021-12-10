@@ -3,7 +3,7 @@ package com.example.sep3tier3.Controller;
 import com.example.sep3tier3.Entities.CreditCard;
 import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Entities.Wallet;
-import com.example.sep3tier3.Handler.SaveInfo;
+import com.example.sep3tier3.Util.SaveInfo;
 import com.example.sep3tier3.Services.Payment.CreditCardService;
 import com.example.sep3tier3.Services.Wallet.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;

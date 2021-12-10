@@ -1,9 +1,9 @@
 package com.example.sep3tier3.Services.ShoppingCart;
 
 import com.example.sep3tier3.Dao.ShoppingCartRepository;
+import com.example.sep3tier3.Dao.ShoppingCartJoinRepository;
 import com.example.sep3tier3.Entities.ShoppingCart;
 import com.example.sep3tier3.Entities.ShoppingCartJoin;
-import com.example.sep3tier3.DaoJOIN.Shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
     @Autowired
     ShoppingCartRepository shoppingCartRepository;
     @Autowired
-    Shop shop;
+    ShoppingCartJoinRepository shoppingCartJoinRepository;
 
     @Override
     public List<ShoppingCart> findAll() {
@@ -31,7 +31,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
     public List<ShoppingCartJoin> findShoppingCartItemsById(long id) {
 
 
-        return shop.GetShopById(id);
+        return shoppingCartJoinRepository.GetShopById(id);
     }
 
     @Override
@@ -50,7 +50,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService{
 
     public long countTotalPriceById(long id){
 
-        return shop.countTotalPriceById(id);
+        return shoppingCartRepository.countTotalPriceById(id);
 
     }
 

@@ -21,4 +21,10 @@ public interface WalletRepository extends CrudRepository<Wallet,Long> {
 
 
 
+
+
+
+
+
+
 }

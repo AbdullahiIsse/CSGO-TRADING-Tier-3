@@ -1,4 +1,4 @@
-package com.example.sep3tier3.Handler;
+package com.example.sep3tier3.Util;
 
 import com.example.sep3tier3.Entities.User;
 
