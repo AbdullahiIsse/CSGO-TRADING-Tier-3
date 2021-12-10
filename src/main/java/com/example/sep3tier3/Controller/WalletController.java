@@ -1,5 +1,6 @@
 package com.example.sep3tier3.Controller;
 
+import com.example.sep3tier3.Entities.Order;
 import com.example.sep3tier3.Entities.Wallet;
 import com.example.sep3tier3.Services.Wallet.WalletService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,28 +28,21 @@ public class WalletController {
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Wallet getWalletById(@PathVariable("id") long id) {
-
         return walletService.findWalletsById(id);
     }
-
 
     @GetMapping("/price/{id}")
     @ResponseStatus(HttpStatus.OK)
     public long sumOfPrice(@PathVariable("id") long id) {
 
         return walletService.sumOfPrice(id);
-
-
     }
-
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
     public Wallet addWallet(@RequestBody Wallet wallet) {
         return walletService.addWallet(wallet);
     }
-
-
 
     @PatchMapping("/{id}")
     public Wallet UpdatePriceByPaymentId(@RequestBody Wallet wallet,@PathVariable("id") long id){

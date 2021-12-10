@@ -14,6 +14,7 @@ public class  SaleOffer {
     private long item_id;
     private int sale_price;
     private long wallet_id;
+    private boolean available;
 
 
 
@@ -54,5 +55,13 @@ public class  SaleOffer {
 
     public void setWallet_id(long wallet_id) {
         this.wallet_id = wallet_id;
+    }
+
+    public boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
     }
 }

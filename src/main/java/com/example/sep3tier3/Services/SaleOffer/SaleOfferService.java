@@ -16,7 +16,7 @@ public interface SaleOfferService {
 
     SaleOffer addSaleOffer(SaleOffer saleOffer);
 
-   void DeleteBySaleOfferId (Long id);
+   void DeleteBySaleOfferId (long id);
 
 
 }

@@ -34,14 +34,14 @@ public class SaleOfferServiceImpl implements SaleOfferService {
 
     @Override
     public SaleOffer addSaleOffer(SaleOffer saleOffer) {
+        saleOffer.setAvailable(true);
         return saleOfferRepository.save(saleOffer);
     }
 
 
 
     @Override
-    public void DeleteBySaleOfferId(Long id) {
-
+    public void DeleteBySaleOfferId(long id) {
         saleOfferRepository.deleteById(id);
     }
 
