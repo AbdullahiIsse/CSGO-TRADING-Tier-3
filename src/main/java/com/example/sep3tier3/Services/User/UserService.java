@@ -18,6 +18,8 @@ public interface UserService {
 
     void DeleteByUserId(Long id);
 
+    User getUserBySaleOfferId(long id);
+
 
 
 

@@ -44,6 +44,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User getUserBySaleOfferId(long id) {
+        return userRepository.getUserBySaleOfferId(id);
+    }
+
+    @Override
     public User validateUser(String username, String password) throws Exception {
 
         User users = userRepository.findByUsernameAndPassword(username, password);

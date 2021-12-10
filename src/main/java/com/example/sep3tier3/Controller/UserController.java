@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Controller;
 
 
+import com.example.sep3tier3.Entities.CreditCard;
 import com.example.sep3tier3.Entities.User;
 import com.example.sep3tier3.Handler.SaveInfo;
 import com.example.sep3tier3.Services.User.UserService;
@@ -30,8 +31,16 @@ public class UserController {
 
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public User getUserById(@PathVariable("id") long id){
-        return userService.findUserByID(id); }
+    public User getUserById(@PathVariable("id") long id) {
+        return userService.findUserByID(id);
+    }
+
+    @GetMapping("/sale/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public User getUserBySaleOfferId(@PathVariable("id") long id) {
+        return userService.getUserBySaleOfferId(id);
+    }
+
 
 
 
@@ -64,6 +73,31 @@ public class UserController {
 
         userService.DeleteByUserId(id);
 
+    }
+
+
+    @PatchMapping("/{id}")
+    public User UpdateUser(@RequestBody User user, @PathVariable("id") long id) {
+
+        User user1 = userService.findUserByID(id);
+
+
+        if (user.getUsername() != null) {
+
+            user1.setUsername(user.getUsername());
+        }
+
+        if (user.getPassword() != null) {
+
+            user1.setPassword(user.getPassword());
+        }
+
+        if (user.getSecuritylevel() != 0) {
+
+            user1.setSecuritylevel(user.getSecuritylevel());
+        }
+
+        return userService.addUser(user1);
 
     }
 
