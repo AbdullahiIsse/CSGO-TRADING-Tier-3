@@ -23,7 +23,7 @@ public class SoldOfferServiceImpl implements SoldOfferService {
 
 
     @Override
-    public List<SoldOffer> findSoldOfferByOrderId(long id) {
+    public SoldOffer findSoldOfferByOrderId(long id) {
         return soldOfferRepository.findSoldOfferByOrderId(id);
     }
 

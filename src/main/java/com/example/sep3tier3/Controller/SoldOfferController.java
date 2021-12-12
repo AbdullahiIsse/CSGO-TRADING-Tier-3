@@ -27,7 +27,7 @@ public class SoldOfferController {
 
     @GetMapping("/order_id/{id}")
     @ResponseStatus(HttpStatus.FOUND)
-    public List<SoldOffer> findSoldOfferByOrderId(@PathVariable("id") long id){
+    public SoldOffer findSoldOfferByOrderId(@PathVariable("id") long id){
         return soldOfferService.findSoldOfferByOrderId(id);
     }
 

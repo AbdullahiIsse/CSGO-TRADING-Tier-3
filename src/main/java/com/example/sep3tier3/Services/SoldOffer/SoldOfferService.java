@@ -10,7 +10,7 @@ public interface SoldOfferService {
 
     List<SoldOffer> findAll();
 
-    List<SoldOffer> findSoldOfferByOrderId(long id);
+    SoldOffer findSoldOfferByOrderId(long id);
 
     List<SoldOffer> findSoldOfferBySellerWalletId(long id);
 
