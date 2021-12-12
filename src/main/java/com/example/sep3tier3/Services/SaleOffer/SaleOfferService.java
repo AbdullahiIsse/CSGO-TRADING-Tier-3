@@ -18,5 +18,5 @@ public interface SaleOfferService {
 
    void DeleteBySaleOfferId (long id);
 
-
+    void setAvaliablity(long id, boolean status);
 }

@@ -40,6 +40,11 @@ public class SaleOfferController {
         return saleOfferService.findOfferBySaleOfferId(id);
     }
 
+    @PostMapping(consumes = "application/json")
+    @ResponseStatus(HttpStatus.FOUND)
+    public SaleOffer findOfferBySaleOfferId(@RequestBody long id, boolean status){
+        return saleOfferService.findOfferBySaleOfferId(id);
+    }
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
