@@ -38,14 +38,18 @@ public class SaleOfferServiceImpl implements SaleOfferService {
         return saleOfferRepository.save(saleOffer);
     }
 
-    @Override
-    public void setAvaliablity(long id, boolean status){
-        saleOfferRepository.setAvaliablity(id, status);
-    }
 
     @Override
     public void DeleteBySaleOfferId(long id) {
         saleOfferRepository.deleteById(id);
+    }
+
+
+
+
+    @Override
+    public void updateSaleOfferToFalse(long id) {
+         saleOfferRepository.updateSaleOfferToFalse(id);
     }
 
 

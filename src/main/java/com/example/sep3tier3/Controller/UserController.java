@@ -7,10 +7,15 @@ import com.example.sep3tier3.Services.User.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.messaging.handler.annotation.support.MethodArgumentNotValidException;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/user")
@@ -58,12 +63,14 @@ public class UserController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public User addUser(@RequestBody User user) {
+    public ResponseEntity<User> addUser( @RequestBody  @Valid User user) {
 
-        User user1 = userService.addUser(user);
+        User user1 = userService.addUser(new User(user.getUsername(), user.getPassword(), 1));
         SaveInfo.getInstance().setUser(user1);
-        return user1;
+        return new ResponseEntity<User>(user1,HttpStatus.CREATED);
     }
+
+
 
 
     @DeleteMapping("/{id}")

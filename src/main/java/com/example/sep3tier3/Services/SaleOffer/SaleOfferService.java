@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface SaleOfferService {
 
+    void updateSaleOfferToFalse(long id);
+
 
     List<SaleOffer> findAll();
 
@@ -18,5 +20,5 @@ public interface SaleOfferService {
 
    void DeleteBySaleOfferId (long id);
 
-    void setAvaliablity(long id, boolean status);
+
 }

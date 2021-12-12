@@ -6,6 +6,7 @@ import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 
 import java.util.List;
@@ -33,16 +34,9 @@ public class SaleOfferController {
     }
 
 
-
     @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public SaleOffer findOfferBySaleOfferId(@PathVariable("id") long id){
-        return saleOfferService.findOfferBySaleOfferId(id);
-    }
-
-    @PostMapping(consumes = "application/json")
-    @ResponseStatus(HttpStatus.FOUND)
-    public SaleOffer findOfferBySaleOfferId(@RequestBody long id, boolean status){
         return saleOfferService.findOfferBySaleOfferId(id);
     }
 
@@ -58,4 +52,21 @@ public class SaleOfferController {
     public void delete(@PathVariable("id") long id) {
         saleOfferService.DeleteBySaleOfferId(id);
     }
+
+
+    @PutMapping ("/{id}")
+    public void updateSaleOfferToFalse(@PathVariable("id") long id){
+        try {
+             saleOfferService.updateSaleOfferToFalse(id);
+        }catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.NO_CONTENT);
+        }
+
+    }
+
+
+
+
+
+
 }

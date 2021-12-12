@@ -23,4 +23,8 @@ public interface SoldOfferRepository extends CrudRepository<SoldOffer,Long> {
 
 
 
+
+
+
+
 }
