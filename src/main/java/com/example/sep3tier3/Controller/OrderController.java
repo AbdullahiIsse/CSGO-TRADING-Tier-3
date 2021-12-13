@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.Order;
+import com.example.sep3tier3.Entities.OrderJoin;
 import com.example.sep3tier3.Entities.SoldOffer;
 import com.example.sep3tier3.Services.Order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,11 @@ public class OrderController {
         return orderService.findOrderByWalletBuyerId(id);
     }
 
-    @GetMapping("/{id}")
+   /* @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public Order getOrderById(@PathVariable("id") long id){
         return orderService.findOrderByID(id);
-    }
+    }*/
 
     @GetMapping("/saleid/{id}")
     @ResponseStatus(HttpStatus.OK)
@@ -47,6 +48,13 @@ public class OrderController {
     @ResponseStatus(HttpStatus.OK)
     public Order addOrder(@RequestBody Order o){
         return orderService.addOrder(o);
+    }
+
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<OrderJoin> GetBoughtItems(@PathVariable("id") long id){
+
+        return orderService.GetBoughtItems(id);
     }
 
 

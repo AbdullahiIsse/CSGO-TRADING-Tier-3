@@ -2,6 +2,7 @@ package com.example.sep3tier3.Controller;
 
 
 import com.example.sep3tier3.Entities.SaleOffer;
+import com.example.sep3tier3.Entities.SaleOfferJoin;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -62,6 +63,13 @@ public class SaleOfferController {
             throw new ResponseStatusException(HttpStatus.NO_CONTENT);
         }
 
+    }
+
+    @GetMapping("/wallet/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<SaleOfferJoin> GetSaleOfferByWalletId(@PathVariable("id") long id){
+
+        return saleOfferService.GetSaleOfferByWalletId(id);
     }
 
 

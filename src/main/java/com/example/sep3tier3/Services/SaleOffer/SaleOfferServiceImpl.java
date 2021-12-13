@@ -1,8 +1,10 @@
 package com.example.sep3tier3.Services.SaleOffer;
 
+import com.example.sep3tier3.Dao.SaleOfferJoinRepository;
 import com.example.sep3tier3.Dao.SaleOfferRepository;
 import com.example.sep3tier3.Entities.Items;
 import com.example.sep3tier3.Entities.SaleOffer;
+import com.example.sep3tier3.Entities.SaleOfferJoin;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class SaleOfferServiceImpl implements SaleOfferService {
 
     @Autowired
     SaleOfferRepository saleOfferRepository;
+
+    @Autowired
+    SaleOfferJoinRepository saleOfferJoinRepository;
 
 
     @Override
@@ -36,6 +41,11 @@ public class SaleOfferServiceImpl implements SaleOfferService {
     public SaleOffer addSaleOffer(SaleOffer saleOffer) {
         saleOffer.setAvailable(true);
         return saleOfferRepository.save(saleOffer);
+    }
+
+    @Override
+    public List<SaleOfferJoin> GetSaleOfferByWalletId(long id) {
+        return saleOfferJoinRepository.GetSaleOfferByWalletId(id);
     }
 
 

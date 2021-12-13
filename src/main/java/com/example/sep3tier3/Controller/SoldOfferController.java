@@ -2,6 +2,7 @@ package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.SaleOffer;
 import com.example.sep3tier3.Entities.SoldOffer;
+import com.example.sep3tier3.Entities.SoldOfferJoin;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import com.example.sep3tier3.Services.SoldOffer.SoldOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,5 +47,11 @@ public class SoldOfferController {
     }
 
 
+    @GetMapping("/{id}")
+    @ResponseStatus(HttpStatus.FOUND)
+    public List<SoldOfferJoin> GetSoldItemsById(@PathVariable("id") long id){
+
+        return soldOfferService.GetSoldItemsById(id);
+    }
 
 }
