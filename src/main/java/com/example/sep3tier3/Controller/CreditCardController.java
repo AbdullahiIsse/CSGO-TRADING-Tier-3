@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -32,10 +33,13 @@ public class CreditCardController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public CreditCard addPayment(@RequestBody CreditCard payment){
+    public CreditCard addPayment(@RequestBody @Valid CreditCard payment){
         CreditCard creditCard = creditCardService.addPayment(payment);
         User user = SaveInfo.getInstance().getUser();
-        Wallet wallet = walletService.addWallet(new Wallet(0,creditCard.getId(),user.getId()));
+        if (user  != null){
+            walletService.addWallet(new Wallet(0,creditCard.getId(),user.getId()));
+        }
+
 
         return creditCard;
     }
@@ -67,7 +71,7 @@ public class CreditCardController {
 
 
     @PatchMapping("/{id}")
-    public CreditCard UpdatePaymentByUserId(@RequestBody CreditCard creditCard,@PathVariable("id") long id){
+    public CreditCard UpdatePaymentByUserId(@RequestBody @Valid CreditCard creditCard,@PathVariable("id") long id){
 
         CreditCard creditCard1 = creditCardService.findPaymentById(id);
 

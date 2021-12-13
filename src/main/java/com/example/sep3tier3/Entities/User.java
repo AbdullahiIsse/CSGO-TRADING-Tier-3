@@ -18,7 +18,7 @@ public class User {
 
 
     @NotBlank(message = "username can not be empty")
-    @Size(min = 4,message = "username must be more then 4 characters")
+    @Size(min = 4,message = "username must be more then 3 characters")
     @Size(max = 12,message = "username can not be more then 12 characters")
     private String username;
 

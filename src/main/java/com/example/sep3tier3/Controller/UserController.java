@@ -83,7 +83,7 @@ public class UserController {
 
 
     @PatchMapping("/{id}")
-    public User UpdateUser(@RequestBody User user, @PathVariable("id") long id) {
+    public User UpdateUser(@RequestBody @Valid User user, @PathVariable("id") long id) {
 
         User user1 = userService.findUserByID(id);
 

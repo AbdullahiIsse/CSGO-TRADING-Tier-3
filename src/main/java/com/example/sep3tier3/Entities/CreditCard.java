@@ -1,6 +1,12 @@
 package com.example.sep3tier3.Entities;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "creditcard")
@@ -11,9 +17,20 @@ public class CreditCard {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "creditCard_generator")
     @SequenceGenerator(name = "creditCard_generator",sequenceName = "credit_card_seq", allocationSize = 1)
     private Long id;
+
+    @NotEmpty(message = "name can not be empty")
+    @Size(min = 4,message = "name must be more than 3 characters")
+    @Size(max = 12, message = "name must be less than 13 characters")
     private String name;
+    @NotEmpty(message = "CardNumber can not be empty")
+    @Size(min = 16 ,max = 16,message = "CardNumber must contain 16 characters")
     private String cardnumber;
+
+    @NotEmpty(message = "expirationdate can not be empty")
     private String expirationdate;
+
+    @NotEmpty(message = "Securitycode can not be empty")
+    @Size(min = 3,max = 3,message = "Securitycode must contain 3 characters")
     private String securitycode;
 
 
