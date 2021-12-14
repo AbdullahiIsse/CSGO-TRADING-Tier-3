@@ -63,7 +63,7 @@ public class UserController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<User> addUser( @RequestBody  @Valid User user) {
+    public ResponseEntity<User> addUser( @Valid @RequestBody  User user) {
 
         User user1 = userService.addUser(new User(user.getUsername(), user.getPassword(), 1));
         SaveInfo.getInstance().setUser(user1);

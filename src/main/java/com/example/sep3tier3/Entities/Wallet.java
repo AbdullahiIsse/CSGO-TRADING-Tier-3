@@ -10,6 +10,7 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wallet_generator")
     @SequenceGenerator(name = "wallet_generator",sequenceName = "wallet_seq", allocationSize = 1)
     private Long id;
+
     private int balance;
     private long creditcard_id;
     private long user_id;

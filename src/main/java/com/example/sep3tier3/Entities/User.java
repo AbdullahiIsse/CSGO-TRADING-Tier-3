@@ -19,17 +19,16 @@ public class User {
 
     @NotBlank(message = "username can not be empty")
     @Size(min = 4,message = "username must be more then 3 characters")
-    @Size(max = 12,message = "username can not be more then 12 characters")
+    @Size(max = 14,message = "username can not be more then 14 characters")
     private String username;
 
     @NotBlank(message = "password can not be empty")
-    @Size(min = 5,message = "password must be more then 6 characters")
-    @Size(max = 16,message = "password can not be more then 16 characters")
+    @Size(min = 8,message = "password must be more then 7 characters")
+    @Size(max = 14,message = "password can not be more then 14 characters")
     private String password;
 
-    @NotNull(message = "value can not be empty")
-    @Min(value = 1, message = "value can not be less then 1")
-    @Max(value = 4, message = "value can not be more then 4")
+
+
     private long securitylevel;
 
     public User() {
