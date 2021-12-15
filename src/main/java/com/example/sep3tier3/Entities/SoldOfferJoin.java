@@ -2,16 +2,20 @@ package com.example.sep3tier3.Entities;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class SoldOfferJoin {
 
     @Id
     private long sold_offer_id;
+    @NotEmpty
 
     private String weaponname;
+    @NotEmpty
 
     private String weaponURL;
+    @NotEmpty
 
     private int sale_price;
 

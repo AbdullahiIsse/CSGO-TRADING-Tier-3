@@ -1,23 +1,28 @@
 package com.example.sep3tier3.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "wallet")
 public class Wallet {
     @Id
-    @Column(name ="wallet_id")
+    @Column(name = "wallet_id")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "wallet_generator")
-    @SequenceGenerator(name = "wallet_generator",sequenceName = "wallet_seq", allocationSize = 1)
+    @SequenceGenerator(name = "wallet_generator", sequenceName = "wallet_seq", allocationSize = 1)
     private Long id;
-
+    @NotEmpty
     private int balance;
+    @NotEmpty
     private long creditcard_id;
+    @NotEmpty
     private long user_id;
 
 
-
     public Wallet() {
+
+
+
 
 
 

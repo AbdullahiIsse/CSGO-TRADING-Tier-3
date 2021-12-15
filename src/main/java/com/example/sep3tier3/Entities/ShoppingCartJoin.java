@@ -5,16 +5,21 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class ShoppingCartJoin {
 
     @Id
+    @NotEmpty
     private long sale_offer_id;
+    @NotEmpty
 
     private long item_id;
+    @NotEmpty
 
     private String weaponname;
+    @NotEmpty
 
     private long sale_price;
 

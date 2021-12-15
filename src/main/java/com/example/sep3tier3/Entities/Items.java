@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "allitems")
@@ -11,7 +12,9 @@ public class Items {
     @SequenceGenerator(name = "item_generator",sequenceName = "item_seq", allocationSize = 1)
 
     private Long id;
+    @NotEmpty
     private String weaponname;
+    @NotEmpty
     private String weaponURL;
 
 

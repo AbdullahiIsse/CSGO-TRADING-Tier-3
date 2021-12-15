@@ -22,6 +22,7 @@ public class User {
     @Size(max = 14,message = "username can not be more then 14 characters")
     private String username;
 
+
     @NotBlank(message = "password can not be empty")
     @Size(min = 8,message = "password must be more then 7 characters")
     @Size(max = 14,message = "password can not be more then 14 characters")

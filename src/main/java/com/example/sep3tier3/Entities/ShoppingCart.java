@@ -1,6 +1,7 @@
 package com.example.sep3tier3.Entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 
 @Entity
@@ -10,10 +11,12 @@ public class ShoppingCart   {
 
     @Id
     @Column(name ="sale_offer_id")
+    @NotEmpty
     private long saleOfferId;
 
     @Id
     @Column(name ="user_id")
+    @NotEmpty
     private long userId;
 
 
