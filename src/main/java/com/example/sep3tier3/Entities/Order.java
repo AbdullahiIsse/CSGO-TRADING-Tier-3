@@ -12,9 +12,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_generator")
     @SequenceGenerator(name = "order_generator",sequenceName = "orders_seq", allocationSize = 1)
     private Long id;
-    @NotEmpty
+
     private long wallet_buyer_id;
-    @NotEmpty
+
     private long sale_id;
 
 

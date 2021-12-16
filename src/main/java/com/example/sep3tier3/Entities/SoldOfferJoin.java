@@ -9,13 +9,13 @@ public class SoldOfferJoin {
 
     @Id
     private long sold_offer_id;
-    @NotEmpty
+
 
     private String weaponname;
-    @NotEmpty
+
 
     private String weaponURL;
-    @NotEmpty
+
 
     private int sale_price;
 

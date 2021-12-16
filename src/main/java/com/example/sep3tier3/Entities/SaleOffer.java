@@ -12,11 +12,11 @@ public class  SaleOffer {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sale_offer_generator")
     @SequenceGenerator(name = "sale_offer_generator",sequenceName = "sale_offer_seq", allocationSize = 1)
     private long id;
-    @NotEmpty
+
     private long item_id;
-    @NotEmpty
+
     private int sale_price;
-    @NotEmpty
+
     private long wallet_id;
 
 

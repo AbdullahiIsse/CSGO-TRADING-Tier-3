@@ -11,12 +11,12 @@ public class ShoppingCart   {
 
     @Id
     @Column(name ="sale_offer_id")
-    @NotEmpty
+
     private long saleOfferId;
 
     @Id
     @Column(name ="user_id")
-    @NotEmpty
+
     private long userId;
 
 

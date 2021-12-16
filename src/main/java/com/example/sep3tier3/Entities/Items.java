@@ -12,9 +12,9 @@ public class Items {
     @SequenceGenerator(name = "item_generator",sequenceName = "item_seq", allocationSize = 1)
 
     private Long id;
-    @NotEmpty
+
     private String weaponname;
-    @NotEmpty
+
     private String weaponURL;
 
 

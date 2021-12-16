@@ -11,15 +11,15 @@ import javax.validation.constraints.NotEmpty;
 public class ShoppingCartJoin {
 
     @Id
-    @NotEmpty
+
     private long sale_offer_id;
-    @NotEmpty
+
 
     private long item_id;
-    @NotEmpty
+
 
     private String weaponname;
-    @NotEmpty
+
 
     private long sale_price;
 

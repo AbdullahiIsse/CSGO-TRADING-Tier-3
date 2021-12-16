@@ -33,7 +33,7 @@ public class CreditCardController {
 
     @PostMapping(consumes = "application/json")
     @ResponseStatus(HttpStatus.CREATED)
-    public CreditCard addPayment(@RequestBody @Valid CreditCard payment){
+    public CreditCard addPayment(@Valid @RequestBody  CreditCard payment){
         CreditCard creditCard = creditCardService.addPayment(payment);
         User user = SaveInfo.getInstance().getUser();
         if (user  != null){
