@@ -3,6 +3,7 @@ package com.example.sep3tier3.Controller;
 
 import com.example.sep3tier3.Entities.SaleOffer;
 import com.example.sep3tier3.Entities.SaleOfferJoin;
+import com.example.sep3tier3.Entities.Wallet;
 import com.example.sep3tier3.Services.SaleOffer.SaleOfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -72,7 +73,26 @@ public class SaleOfferController {
         return saleOfferService.GetSaleOfferByWalletId(id);
     }
 
+    @PatchMapping("/{id}")
+    public SaleOffer UpdateSaleOffer(@RequestBody SaleOffer saleOffer, @PathVariable("id") long id){
 
+        SaleOffer offer = saleOfferService.findOfferBySaleOfferId(id);
+
+
+        if (saleOffer.getSale_price()!= 0){
+
+            offer.setSale_price(saleOffer.getSale_price());
+        }
+
+        if (saleOffer.getAvailable()!= false){
+            offer.setAvailable(saleOffer.getAvailable());
+        }
+
+
+        return saleOfferService.addSaleOffer(offer);
+
+
+    }
 
 
 

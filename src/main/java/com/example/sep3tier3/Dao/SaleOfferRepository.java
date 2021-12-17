@@ -18,9 +18,6 @@ public interface SaleOfferRepository extends CrudRepository<SaleOffer,Long> {
     @Query(nativeQuery = true, value = "select * from sale_offer where wallet_id = ?1")
     List<SaleOffer> findOfferByWallet_id(long id);
 
-    @Query(nativeQuery = true, value = "DELETE FROM sale_offer WHERE user_id=?1")
-    void DeleteBySaleOfferId(long id);
-
     @Query(nativeQuery = true, value = "update sale_offer set available = false where sale_offer_id = ?1")
     void updateSaleOfferToFalse(long id);
 
